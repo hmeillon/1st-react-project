@@ -9,12 +9,16 @@ function TaskList() {
 
   //This will help us handle in case that we dont have any data in the "backend" (our tasks.js file).
   if (data.length === 0) {
-    return <h1>No tasks yet.</h1>;
+    return (
+      <h1 className="text-2xl font-bold text-emerald-200 mb-3 text-center">
+        No tasks yet.
+      </h1>
+    );
   }
 
   //This is what is going to be rendered, it will import the TaskCard and we are going to pass the key and the data, so in that component can render the info we are rendering from App(), then we map and go over our data array, and it will generate one div per object.
   return (
-    <div>
+    <div className="grid grid-cols-3 gap-5">
       {data.map((data) => (
         <TaskCard key={data.id} data={data} />
       ))}

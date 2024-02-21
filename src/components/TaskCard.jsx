@@ -6,11 +6,16 @@ function TaskCard({ data }) {
   const { deleteTask } = useContext(TaskContext);
 
   return (
-    <div>
-      <h2>{data.title}</h2>
-      <p>{data.description}</p>
+    <div className="bg-cyan-800 text-emerald-200 p-3 rounded-md">
+      <h2 className="text-xl font-bold capitalize ">{data.title}</h2>
+      <p className="text-emerald-100">{data.description}</p>
       {/*This button will execute, once clicked the deleteTask function and pass as an argument the task*/}
-      <button onClick={() => deleteTask(data.id)}>Delete</button>
+      <button
+        className="bg-red-600 text-white px-2 p-1 mt-5 mb-1 rounded-md hover:bg-red-500"
+        onClick={() => deleteTask(data.id)}
+      >
+        Delete
+      </button>
     </div>
   );
 }
